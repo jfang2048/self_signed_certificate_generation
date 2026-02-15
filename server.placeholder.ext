@@ -1,0 +1,24 @@
+[ req ]
+default_bits        = 4096
+distinguished_name  = req_distinguished_name
+req_extensions      = req_ext
+
+[ req_distinguished_name ]
+C  = XX
+ST = STATE_PLACEHOLDER
+L  = CITY_PLACEHOLDER
+O  = ORG_PLACEHOLDER
+
+[ req_ext ]
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = SERVER_DOMAIN_PLACEHOLDER
+
+[ v3_ca ]
+authorityKeyIdentifier = keyid:always,issuer
+basicConstraints = CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+
+[ SAN ]
+subjectAltName = @alt_names
