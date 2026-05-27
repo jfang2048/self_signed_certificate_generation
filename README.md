@@ -1,4 +1,4 @@
-# 自签名证书工具集（扁平目录）
+# 自签名证书工具集
 
 ## 1. 项目目标
 本项目用于在本地/内网场景中自动化完成证书相关工作：
@@ -7,12 +7,6 @@
 - 合并为 PEM
 - 安装 CA 到 Debian
 - 导入 CA 到 Windows
-
-当前脚本遵循统一风格：
-- 默认读取 `cert_config.env`
-- 支持命令行参数覆盖（`--help` 可查看）
-- 日志输出到 `stderr`
-- 结果输出到 `stdout`（`KEY=VALUE`），便于管道组合
 
 ## 2. 文件说明
 - `cert_config.env`：统一配置入口
@@ -130,7 +124,7 @@ WIN_CERT_STORE=Root
   --out /tmp/certs/api.example.internal.pem
 ```
 
-## 7. 组合与管道示例（UNIX 风格）
+## 7. 组合例
 ### 一次生成并导出 PEM（通过 stdout 变量）
 ```bash
 eval "$(./create_server_cert.sh)"
